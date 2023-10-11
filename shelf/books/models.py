@@ -8,7 +8,7 @@ class Author(models.Model):
 	telephone = models.CharField(max_length=100, null=True)
 	recommendedby = models.ForeignKey('Author', on_delete=models.CASCADE, related_name='recommended_authors', related_query_name='recommended_authors', null=True)
 	joindate = models.DateField()
-	popularity_source = models.IntegerField()
+	popularity_score = models.IntegerField()
 	followers = models.ManyToManyField('User', related_name='followed_authors', related_query_name='followed_authors')
 
 	def __str__(self):
